@@ -1,5 +1,4 @@
 package de.manu3lll.hydash;
-import com.hypixel.hytale.server.core.HytaleServer;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 public class HyDash extends JavaPlugin {
@@ -12,8 +11,9 @@ public class HyDash extends JavaPlugin {
 
     @Override
     protected void setup() {
-        // Starte unseren eigenen Server
-        webServer = new SimpleWebServer(this);
+        ConfigManager configManager = new ConfigManager(this);
+        WebConfig config = configManager.load();
+        webServer = new SimpleWebServer(this, config);
         webServer.start();
     }
 

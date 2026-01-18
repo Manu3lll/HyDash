@@ -11,13 +11,32 @@ import java.nio.file.Paths;
 
 public class HelperMethods {
 
-    public static boolean checkAuth(HttpExchange t, String AUTH_TOKEN) throws IOException {
+    public static boolean checkAuth(HttpExchange t, WebConfig config) throws IOException {
         String query = t.getRequestURI().getQuery();
-        if (query != null && query.contains("token=" + AUTH_TOKEN)) {
+        if (query != null && query.contains("token=" + config.token)) {
             return true;
         }
-        sendResponse(t, "Access denied! Wrong Token.", 403);
-        return false;
+
+        String cookieHeader = t.getRequestHeaders().getFirst("Cookie");
+        if (cookieHeader != null) {
+            String[] cookies = cookieHeader.split(";");
+            for (String cookie : cookies) {
+                String[] parts = cookie.trim().split("=");
+                if (parts.length == 2) {
+                    String name = parts[0];
+                    String value = parts[1];
+                    if ("auth_token".equals(name) && config.token.equals(value)) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        if (!t.getRequestURI().getPath().equals("/dashboard")) {
+            sendResponse(t, "Access denied! Login required.", 403);
+            return false;
+        }
+        return true;
     }
 
     public static void sendResponse(HttpExchange t, String response, int code) throws IOException {
@@ -33,7 +52,6 @@ public class HelperMethods {
             Path logDir = Paths.get("logs");
             if (!Files.exists(logDir)) return null;
 
-            // Wir suchen einfach "latest.log" oder die neueste
             Path latest = logDir.resolve("latest.log");
             if (Files.exists(latest)) return latest;
 
