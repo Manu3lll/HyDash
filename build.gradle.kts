@@ -3,8 +3,8 @@ plugins {
     id("hytale-mod") version "0.+"
 }
 
-group = "com.example"
-version = "0.1.0"
+group = "de.manu3lll.hydash"
+version = "0.0.1"
 val javaVersion = 25
 
 val appData = System.getenv("APPDATA") ?: (System.getenv("HOME") + "/.var/app/com.hypixel.HytaleLauncher/data")

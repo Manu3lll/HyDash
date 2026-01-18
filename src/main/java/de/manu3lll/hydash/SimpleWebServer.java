@@ -90,7 +90,7 @@ public class SimpleWebServer {
                     </div>
                     <div id="main-content" class="hidden">
                          <div style="display:flex; justify-content:space-between; align-items:center; flex-shrink:0;">
-                    <h2>HyDash - Hytale Server Dashboard <span style="font-size: 0.6em; color: #888;">v0.1</span></h2>
+                    <h2>HyDash - Hytale Server Dashboard <span style="font-size: 0.6em; color: #888;">v0.0.1</span></h2>
                     <div style="display: flex; align-items: center; gap: 15px;">
                         <div id="stats">👤 Players: <span id="pCount" class="stat-val">0 / 0</span></div>
                         <div id="status">Connecting...</div>
