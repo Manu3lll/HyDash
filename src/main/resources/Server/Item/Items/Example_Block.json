@@ -26,7 +26,7 @@
         "Weight": 1
       }
     ],
-    "ParticleColor": "#3d3e3e",
+    "ParticleColor": "#07d0d0",
     "BlockSoundSetId": "Gravel",
     "TransitionTexture": "BlockTextures/Transition_Ashes.png",
     "TransitionToGroups": [
@@ -40,7 +40,7 @@
       "Soil"
     ]
   },
-  "ItemSoundSetId": "ISS_Blocks_Soft",
+  "ItemSoundSetId": "ISS_Blocks_Stone",
   "IconProperties": {
     "Scale": 0.58823,
     "Rotation": [
