@@ -12,7 +12,8 @@
     <a href="https://buymeacoffee.com/manu.hiller?">
     <img src="https://img.shields.io/badge/-buy_me_a%C2%A0coffee-gray?logo=buy-me-a-coffee">    
 </a>
-</p>
+</p><img width="1920" height="911" alt="2026-01-18 21_55_29-HyDash – config json  HyDash" src="https://github.com/user-attachments/assets/4f0155d7-cd9b-4d96-a018-2a5efb2a37f2" />
+
 
 ## ✨ Features
 
