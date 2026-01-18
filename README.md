@@ -30,7 +30,7 @@
 2.  Stop your Hytale server.
 3.  Place the `HyDash.jar` into your server's **`mods`** folder.
 4.  Start the server.
-5.  The dashboard is now accessible on port `8888`.
+5.  The dashboard is now accessible on port `8888` -> http://ip-of-your-server:8888/
 
 ## ⚙️ Configuration
 
